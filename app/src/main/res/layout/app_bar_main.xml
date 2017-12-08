@@ -16,22 +16,31 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:backgroundTint="@android:color/holo_red_dark"
-            android:background="@android:color/holo_red_dark"
-            android:elevation="500dp"
+            android:background="@color/Purple_700"
+            android:elevation="50dp"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:titleTextColor="#fff" />
+            app:titleTextColor="@color/white" />
 
     </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_main"
-        android:id="@+id/content_frame"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/media_bar"
-        app:layout_constraintTop_toBottomOf="@id/toolbarcontainer"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:layout_height="10dp"
+        android:layout_marginBottom="71dp"
+        android:background="@drawable/rounded_rect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/content_main"
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/media_bar"
+            app:layout_constraintTop_toBottomOf="@id/toolbarcontainer"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </ScrollView>
 
     <include layout="@layout/media_bar"
         android:id="@+id/media_bar"
